@@ -1,7 +1,9 @@
 const initialState = {
   name: 'Аноним',
-}
+};
 
-export function userReducer(state = initialState) {
+function userReducer(state = initialState) {
   return state;
 }
+
+export default userReducer;
