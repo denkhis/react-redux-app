@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export class Page extends Component {
+class Page extends Component {
 
   onBtnClick = (e) => {
     const year = +e.currentTarget.innerText;
@@ -32,3 +32,5 @@ Page.propTypes = {
   photos: PropTypes.array.isRequired,
   setYear: PropTypes.func.isRequired,
 }
+
+export default Page;
