@@ -29,10 +29,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (store) => ({
-  user: store.user,
-  page: store.page,
-  counter: store.counter,
+const mapStateToProps = (state) => ({
+  user: state.user,
+  page: state.page,
+  counter: state.counter,
 });
 
 const mapDispatchToProps = (dispatch) => ({
