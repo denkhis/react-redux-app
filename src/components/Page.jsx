@@ -10,24 +10,26 @@ class Page extends Component {
   render() {
     const { year, photos } = this.props;
     return (
-      <div>
+      <div className="ib page">
         <div>
-          <button type="button" onClick={this.onBtnClick}>2020</button>
-          <button type="button" onClick={this.onBtnClick}>2019</button>
-          <button type="button" onClick={this.onBtnClick}>2018</button>
-          <button type="button" onClick={this.onBtnClick}>2017</button>
-          <button type="button" onClick={this.onBtnClick}>2016</button>
+          <button className="btn" type="button" onClick={this.onBtnClick}>2020</button>
+          <button className="btn" type="button" onClick={this.onBtnClick}>2019</button>
+          <button className="btn" type="button" onClick={this.onBtnClick}>2018</button>
+          <button className="btn" type="button" onClick={this.onBtnClick}>2017</button>
+          <button className="btn" type="button" onClick={this.onBtnClick}>2016</button>
         </div>
+        <h3>
+          {' '}
+          {year}
+          {' '}
+          год
+        </h3>
         <p>
           У тебя
           {' '}
           {photos.length}
           {' '}
-          фото за
-          {' '}
-          {year}
-          {' '}
-          год
+          фото.
         </p>
       </div>
     );
