@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class Page extends Component {
   onBtnClick = (e) => {
@@ -34,12 +33,5 @@ class Page extends Component {
     );
   }
 }
-
-Page.propTypes = {
-  year: PropTypes.number.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  photos: PropTypes.array.isRequired,
-  setYear: PropTypes.func.isRequired,
-};
 
 export default Page;
