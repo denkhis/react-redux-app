@@ -4,3 +4,10 @@ export function setYear(year) {
     payload: year,
   }
 }
+
+export function increaseCounter(counter) {
+  return {
+    type: 'INCREASE_COUNTER',
+    payload: counter,
+  }
+}
