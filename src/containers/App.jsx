@@ -2,20 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Page from '../components/Page';
 import User from '../components/User';
-// import Counter from '../components/Counter';
+import Counter from '../components/Counter';
 // eslint-disable-next-line import/no-duplicates
 import { setYear } from '../actions/PageActions';
 // eslint-disable-next-line import/no-duplicates
-// import { increaseCounter } from '../actions/PageActions';
+import { increaseCounter } from '../actions/PageActions';
 
 import './App.css';
-// import Counter from "../components/Counter";
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   render() {
     const {
-      user, page, setYearAction,
+      user, page, setYearAction, counter, increaseCounterAction,
     } = this.props;
     return (
       <div className="App">
@@ -24,7 +23,7 @@ class App extends Component {
         </header>
         <User name={user.name} />
         <Page photos={page.photos} year={page.year} setYear={setYearAction} />
-        {/* <Counter counter={counter} increaseCounter={increaseCounterAction} /> */}
+        <Counter counter={counter.counter} increaseCounter={increaseCounterAction} />
       </div>
     );
   }
@@ -33,12 +32,12 @@ class App extends Component {
 const mapStateToProps = (store) => ({
   user: store.user,
   page: store.page,
-  // counter: store.counter,
+  counter: store.counter,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setYearAction: (year) => dispatch(setYear(year)),
-  // increaseCounterAction: (counter) => dispatch(increaseCounter(counter)),
+  increaseCounterAction: (counter) => dispatch(increaseCounter(counter)),
 });
 
 export default connect(
