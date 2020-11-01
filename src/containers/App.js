@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Page } from './components/Page';
-import { User } from './components/User';
+import { Page } from '../components/Page';
+import { User } from '../components/User';
 
-import './containers/App.css';
+import './App.css';
 
 class App extends Component {
   render() {
@@ -14,7 +14,7 @@ class App extends Component {
           <h1 className="App-title">Мой топ фото</h1>
         </header>
         <User name={user.name} />
-        <Page name={page.photos}  year={page.year}/>
+        <Page photos={page.photos}  year={page.year}/>
       </div>
     )
   }
