@@ -1,46 +1,47 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Page } from '../components/Page';
-import { User } from '../components/User';
-import { Counter } from '../components/Counter';
-import { setYear} from '../actions/PageActions';
-import { increaseCounter} from '../actions/PageActions';
+import Page from '../components/Page';
+import User from '../components/User';
+// import Counter from '../components/Counter';
+// eslint-disable-next-line import/no-duplicates
+import { setYear } from '../actions/PageActions';
+// eslint-disable-next-line import/no-duplicates
+// import { increaseCounter } from '../actions/PageActions';
 
 import './App.css';
+// import Counter from "../components/Counter";
 
+// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   render() {
-    const { user, page, counter, setYearAction, increaseCounterAction } = this.props;
+    const {
+      user, page, setYearAction,
+    } = this.props;
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Мой топ фото</h1>
         </header>
         <User name={user.name} />
-        <Page photos={page.photos} year={page.year} setYear={setYearAction}/>
-        <Counter counter={counter} increaseCounter={increaseCounterAction}/>
+        <Page photos={page.photos} year={page.year} setYear={setYearAction} />
+        {/* <Counter counter={counter} increaseCounter={increaseCounterAction} /> */}
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = (store) => {
-  console.log(store);
-  return {
-    user: store.user,
-    page: store.page,
-    counter: store.counter,
-  }
-}
+const mapStateToProps = (store) => ({
+  user: store.user,
+  page: store.page,
+  // counter: store.counter,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setYearAction: (year) => dispatch(setYear(year)),
-    increaseCounterAction: (counter) => dispatch(increaseCounter(counter)),
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  setYearAction: (year) => dispatch(setYear(year)),
+  // increaseCounterAction: (counter) => dispatch(increaseCounter(counter)),
+});
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
-  )(App);
+  mapDispatchToProps,
+)(App);
