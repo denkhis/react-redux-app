@@ -4,11 +4,11 @@ class Page extends Component {
   onBtnClick = (e) => {
     const year = +e.currentTarget.innerText;
     // eslint-disable-next-line react/destructuring-assignment
-    this.props.setYear(year);
+    this.props.getPhotos(year);
   }
 
   render() {
-    const { year, photos } = this.props;
+    const { year, photos, isFetching } = this.props;
     return (
       <div className="ib page">
         <div>
@@ -24,13 +24,15 @@ class Page extends Component {
           {' '}
           год
         </h3>
-        <p>
-          У тебя
-          {' '}
-          {photos.length}
-          {' '}
-          фото.
-        </p>
+        {isFetching ? <p>Загрузка...</p> : (
+          <p>
+            У тебя
+            {' '}
+            {photos.length}
+            {' '}
+            фото
+          </p>
+        )}
       </div>
     );
   }
